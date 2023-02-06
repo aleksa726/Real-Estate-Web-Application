@@ -1,0 +1,16 @@
+{
+    "_id" : ObjectId("61f08b039f307abdfb3b0d0c"),
+    "name" : "Beograd"
+}
+{
+    "_id" : ObjectId("61f08b039f307abdfb3b0d0f"),
+    "name" : "Novi Sad"
+}
+{
+    "_id" : ObjectId("61f08b039f307abdfb3b0d12"),
+    "name" : "Nis"
+}
+{
+    "_id" : ObjectId("61f08b039f307abdfb3b0d15"),
+    "name" : "Cacak"
+}

@@ -1,0 +1,28 @@
+.container{
+    min-height: 80%;
+}
+
+td{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    
+}
+
+span{
+    font-size: 16px;
+}
+
+h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    font-style: italic;
+    padding: 35px;
+}
+
+
+table{
+    margin-top: 50px !important;
+}
+

@@ -1,0 +1,65 @@
+<div class="container">
+    <h2>Dodaj agenciju</h2>
+    <table style="margin: auto;">
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Naziv agencije</mat-label>
+                    <input [(ngModel)]='agencyName' type="text" matInput [formControl]="agencyNameFormControl">
+                    <mat-error *ngIf="agencyNameFormControl.hasError('required')">
+                        Naziv agencije je <strong>obavezno</strong> polje
+                    </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Adresa</mat-label>
+                    <input [(ngModel)]='agencyAdress' type="text" matInput [formControl]="agencyAdressFormControl">
+                    <mat-error *ngIf="agencyAdressFormControl.hasError('required')">
+                        Adresa je <strong>obavezno</strong> polje
+                    </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Grad</mat-label>
+                    <input [(ngModel)]='agencyCity' type="text" matInput [formControl]="agencyCityFormControl">
+                    <mat-error *ngIf="agencyCityFormControl.hasError('required')">
+                        Grad je <strong>obavezno</strong> polje
+                    </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Telefon</mat-label>
+                    <input [(ngModel)]='agencyPhone' type="text" matInput [formControl]="agencyPhoneFormControl">
+                    <mat-error *ngIf="agencyPhoneFormControl.hasError('required')">
+                        Telefon je <strong>obavezno</strong> polje
+                    </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>PIB</mat-label>
+                    <input [(ngModel)]='pib' type="text" matInput [formControl]="pibFormControl">
+                    <mat-error *ngIf="pibFormControl.hasError('required')">
+                        PIB je <strong>obavezno</strong> polje
+                    </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button mat-raised-button (click)='registerAgency()'>Dodaj agenciju</button>
+            </td>
+        </tr>
+    </table>
+</div>

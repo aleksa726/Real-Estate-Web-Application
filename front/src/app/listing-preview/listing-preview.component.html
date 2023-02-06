@@ -1,0 +1,21 @@
+<div class="oglas_div">
+    <a href="" routerLink="../listing/{{listing.naslov}}">
+        <h2>{{listing.naslov}}</h2>
+        <h4>{{listing.grad}} - {{listing.opstina}} - {{listing.mikrolokacija}}</h4>
+        <img [src]="listing.imagesNames" alt="">
+        <span class="cena">{{listing.cena}}</span>
+        <span>Prosecna cena: {{prosecnaCena}}</span>
+        <div class="karakteristike">
+            <div class="karakteristike_div">
+                <span style="text-align: left;">Kvadratura: {{listing.kvadrata}} m2</span>
+                <span style="text-align: right;">Sprat: {{listing.sprat}}</span>
+            </div>
+            <div class="karakteristike_div">
+                <span>Broj soba: {{listing.soba}}</span>
+                <span>Linije: {{listing.linije}}</span>
+            </div>
+        </div>
+        <p>{{listing.opis}}</p>
+
+    </a>
+</div>

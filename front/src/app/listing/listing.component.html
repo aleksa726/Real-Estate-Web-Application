@@ -1,0 +1,141 @@
+<div class="container">
+    <div class="div_oglasa">
+        <div class="naslov_lokacija">
+            <h2>{{listing.naslov}}</h2>
+            <h4>{{listing.grad}} - {{listing.opstina}} - {{listing.mikrolokacija}} - {{listing.ulica}}</h4>
+        </div>
+        <div class="content">
+            <div class="levo">
+                <div class="cena" [ngClass]="{'crveno' : cenaPoKvadratuNekretnine > prosecnaCena}">
+                    {{listing.cena}}
+                </div>
+                <div class="div_slika">
+                    <img *ngIf="showPicture[0]==true" [src]="imagePaths[0]" alt="">
+                    <img *ngIf="showPicture[1]==true" [src]="imagePaths[1]" alt="">
+                    <img *ngIf="showPicture[2]==true" [src]="imagePaths[2]" alt="">
+                    <img *ngIf="showPicture[3]==true" [src]="imagePaths[3]" alt="">
+                    <img *ngIf="showPicture[4]==true" [src]="imagePaths[4]" alt="">
+                    <img *ngIf="showPicture[5]==true" [src]="imagePaths[5]" alt="">
+                    <div class="dugmici">
+                        <button *ngFor="let i of imagePaths" (click)=setShowPicture(i)></button>
+                    </div>
+                </div>
+                <div class="karakteristike">
+                    <div class="checkbox_div">
+                        <input *ngIf="listing.terasa==true" type="checkbox" name="terasa" id="" disabled="disabled"
+                            checked>
+                        <input *ngIf="listing.terasa==false" type="checkbox" name="terasa" id="" disabled="disabled">
+                        <label for="terasa">Terasa</label>
+                    </div>
+                    <div class="checkbox_div">
+                        <input *ngIf="listing.lodja==true" type="checkbox" name="lodja" id="" disabled="disabled"
+                            checked>
+                        <input *ngIf="listing.lodja==false" type="checkbox" name="lodja" id="" disabled="disabled">
+                        <label for="lodja">Lodja</label>
+                    </div>
+                    <div class="checkbox_div">
+                        <input *ngIf="listing.balkon==true" type="checkbox" name="balkon" id="" disabled="disabled"
+                            checked>
+                        <input *ngIf="listing.balkon==false" type="checkbox" name="balkon" id="" disabled="disabled">
+                        <label for="balkon">Franc. balkon</label>
+                    </div>
+                    <div class="checkbox_div">
+                        <input *ngIf="listing.lift==true" type="checkbox" name="lift" id="" disabled="disabled" checked>
+                        <input *ngIf="listing.lift==false" type="checkbox" name="lift" id="" disabled="disabled">
+                        <label for="lift">Lift</label>
+                    </div>
+                    <div class="checkbox_div">
+                        <input *ngIf="listing.podrum==true" type="checkbox" name="podrum" id="" disabled="disabled"
+                            checked>
+                        <input *ngIf="listing.podrum==false" type="checkbox" name="podrum" id="" disabled="disabled">
+                        <label for="podrum">Podrum</label>
+                    </div>
+                    <div class="checkbox_div">
+                        <input *ngIf="listing.garaza==true" type="checkbox" name="garaza" id="" disabled="disabled"
+                            checked>
+                        <input *ngIf="listing.garaza==false" type="checkbox" name="garaza" id="" disabled="disabled">
+                        <label for="garaza">Garaza</label>
+                    </div>
+                    <div class="checkbox_div">
+                        <input *ngIf="listing.basta==true" type="checkbox" name="basta" id="" disabled="disabled"
+                            checked>
+                        <input *ngIf="listing.basta==false" type="checkbox" name="basta" id="" disabled="disabled">
+                        <label for="basta">Basta</label>
+                    </div>
+                    <div class="checkbox_div">
+                        <input *ngIf="listing.klima==true" type="checkbox" name="klima" id="" disabled="disabled"
+                            checked>
+                        <input *ngIf="listing.klima==false" type="checkbox" name="klima" id="" disabled="disabled">
+                        <label for="klima">Klima</label>
+                    </div>
+                    <div class="checkbox_div">
+                        <input *ngIf="listing.internet==true" type="checkbox" name="internet" id="" disabled="disabled"
+                            checked>
+                        <input *ngIf="listing.internet==false" type="checkbox" name="internet" id=""
+                            disabled="disabled">
+                        <label for="internet">Internet</label>
+                    </div>
+                    <div class="checkbox_div">
+                        <input *ngIf="listing.interfon==true" type="checkbox" name="interfon" id="" disabled="disabled"
+                            checked>
+                        <input *ngIf="listing.interfon==false" type="checkbox" name="interfon" id=""
+                            disabled="disabled">
+                        <label for="lodja">Interfon</label>
+                    </div>
+                    <div class="checkbox_div">
+                        <input *ngIf="listing.telefon==true" type="checkbox" name="telefon" id="" disabled="disabled"
+                            checked>
+                        <input *ngIf="listing.telefon==false" type="checkbox" name="telefon" id="" disabled="disabled">
+                        <label for="telefon">Telefon</label>
+                    </div>
+                </div>
+            </div>
+            <div class="desno">
+                <div class="tip">
+                    <span>Tip: {{listing.tip}}</span>
+                    <span>Kvadratura: {{listing.kvadrata}}m2</span>
+                    <span>Soba: {{listing.soba}}</span>
+                </div>
+                <div class="informacije">
+                    <div class="informacije_levo">
+                        <span *ngIf="listing.agencija!=null">Oglasavac: Agencija</span>
+                        <span *ngIf="listing.agencija==null">Oglasavac: Fizicko lice</span>
+                        <span>Godina izgradnje: {{listing.godina}}</span>
+                        <span>Stanje nekretnine: {{listing.stanje}}</span>
+                        <span>Tip grejanja: {{listing.grejanje}}</span>
+                        <button mat-stroked-button (click)="dodajOmiljene(listing)"
+                            style="background-color: white;">Dodaj u omiljene</button>
+                    </div>
+                    <div class="informacije_desno">
+                        <span>Sprat: {{listing.sprat}}</span>
+                        <span>Ukupna spratnost: {{listing.ukupnoSpratova}}</span>
+                        <span>Parking: {{listing.parking}}</span>
+                    </div>
+                </div>
+                <div class="opis">
+                    <span style="margin-bottom: 5px;">Opis:</span>
+                    <span>{{listing.opis}}</span>
+                    <span style="text-align: center; margin-top: 30px; font-size: 18px;">Prosecna cena:
+                        {{prosecnaCena}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="oglasavac">
+            <div *ngIf="listing.agencija!=null" class="agencija">
+                <span>Agencija: {{listing.agencija}}</span>
+                <span>Adresa: {{listing.adresaAgencije}}</span>
+                <span>Grad: {{listing.gradAgencije}}</span>
+                <span>Telefon: {{listing.telefonAgencije}}</span>
+                <span>PIB: {{listing.pibAgencije}}</span>
+                <br>
+            </div>
+            <div class="oglasavac_podaci">
+                <span>Oglasavac:</span>
+                <span>Ime: {{listing.ime}}</span>
+                <span>Prezime: {{listing.prezime}}</span>
+                <span *ngIf="showPhone==true">Telefon: {{listing.telefonProdavca}}</span>
+                <span *ngIf="showPhone==false">Telefon: <button (click)='prikaziTelefon()'>+</button></span>
+            </div>
+        </div>
+    </div>
+</div>

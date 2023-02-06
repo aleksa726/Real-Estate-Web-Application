@@ -1,0 +1,22 @@
+{ 
+   "Realestate":{ 
+      "Name":"Stan...", 
+      "City":"Beograd", 
+      "Municipality":"Zvezdara", 
+      "Microlocation":"Bulbulder", 
+      "Street":"Krfska", 
+	  "Type": "Stan",
+      "Area":50, 
+      "Rooms":1, 
+      "ConstructionYear":2021, 
+      "State":"Lux", 
+      "Heating":"CG", 
+      "Floor":5, 
+      "TotalFloors":6, 
+      "Parking":"Da", 
+      "MonthlyUtilities":60, 
+      "Price":80000,       
+      "About":"Novije gradnje, sanitarije ugradjene, bez kuhinje. Garaza 16000", 
+      "Characteristics":["Terasa","Lift","Garaža","Klima","Internet","Interfon","Telefon"] 
+   } 
+} 

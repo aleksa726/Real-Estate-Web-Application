@@ -1,0 +1,156 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.div_oglasa{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    max-width: 1000px;
+    border: 1px solid gray;
+    background-color: rgb(249, 255, 225);
+}
+
+.naslov_lokacija{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.levo{
+    width: 50%;
+    background-color: wheat;
+    box-sizing: border-box;
+    padding: 1%;
+}
+
+.cena{
+    text-align: center;
+    color: lime;
+    font-size: 24px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.div_slika{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.div_slika img{
+    max-width: 400px;
+    max-height: 200px;
+}
+
+.crveno{
+    color: red;
+}
+
+.karakteristike {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.checkbox_div{
+    width: 25%;
+}
+
+.desno{
+    background-color: wheat;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    box-sizing: border-box;
+    padding: 1%;
+}
+
+.tip{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.informacije{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.informacije button{
+    margin-top: 15px;
+}
+
+.informacije_levo, .informacije_desno{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.opis{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+}
+
+.oglasavac{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.agencija{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-right: 5%;
+}
+
+.oglasavac_podaci{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.dugmici{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container{
+    min-height: 80%;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .content{
+      flex-direction: column;
+      align-items: center;
+  }
+  .levo{
+      width: 90%;
+  }
+  .desno{
+      width:90%;
+  }
+}

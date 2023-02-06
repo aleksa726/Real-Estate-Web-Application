@@ -1,0 +1,35 @@
+<h2>Svi korisnici</h2>
+<table style="margin: auto;">
+    <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Username</th>
+        <th>Grad</th>
+        <th>Datum rodjenja</th>
+        <th>Telefon</th>
+        <th>Email</th>
+        <th>Agencija</th>
+        <th>Licenca</th>
+    </tr>
+    <tr *ngFor='let user of allUsers'>
+        <td>{{user.firstname}}</td>
+        <td>{{user.lastname}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.city}}</td>
+        <td>{{user.birthday}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.agency}}</td>
+        <td>{{user.licence}}</td>
+        <td>
+            <button mat-fab color="primary" (click)='updateUser(user.username)'>
+                <mat-icon>edit</mat-icon>
+            </button>
+        </td>
+        <td>
+            <button mat-fab color="warn" (click)='declineUser(user.username)'>
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+    </tr>
+</table>

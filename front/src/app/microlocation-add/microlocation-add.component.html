@@ -1,0 +1,102 @@
+<div class="container">
+    <h2>Dodaj mikrolokaciju</h2>
+    <table style="margin: auto;">
+        <tr>
+            <td>
+                <mat-form-field appearance="fill">
+                    <mat-label>Grad</mat-label>
+                    <mat-select [formControl]="gradFormControl" [(ngModel)]='grad'
+                        (selectionChange)="onCitySelected($event)">
+                        <mat-option *ngFor='let city of cities' value="{{city.name}}">{{city.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="gradFormControl.hasError('required')">Izaberite jedan od gradova</mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance="fill">
+                    <mat-label>Opstina</mat-label>
+                    <mat-select [formControl]="opstinaFormControl" [(ngModel)]='opstina'>
+                        <mat-option *ngFor='let state of states' value="{{state.name}}">{{state.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="opstinaFormControl.hasError('required')">Izaberite jednu od opstina</mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Mikrolokacija</mat-label>
+                    <input [(ngModel)]='mikrolokacija' type="text" matInput [formControl]="mikrolokacijaFormControl">
+                    <mat-error *ngIf="mikrolokacijaFormControl.hasError('required')">
+                        Mikrolokacija je <strong>obavezno</strong> polje
+                    </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button mat-raised-button (click)="dodajMikrolokaciju()">Dodaj mikrolokaciju</button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <h2>Dodaj ulicu</h2>
+    <table style="margin: auto;">
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Mikrolokacija</mat-label>
+                    <input [(ngModel)]='mikrolokacijaUlice' type="text" matInput
+                        [formControl]="mikrolokacijaUliceFormControl">
+                    <mat-error *ngIf="mikrolokacijaUliceFormControl.hasError('required')">
+                        Mikrolokacija je <strong>obavezno</strong> polje
+                    </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Ulica</mat-label>
+                    <input [(ngModel)]='ulica' type="text" matInput [formControl]="ulicaFormControl">
+                    <mat-error *ngIf="ulicaFormControl.hasError('required')">
+                        Ulica je <strong>obavezno</strong> polje
+                    </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button mat-raised-button (click)="dodajUlicu()">Dodaj Ulicu</button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <h2>Obrisi mikrolokaciju</h2>
+    <table style="margin: auto;">
+        <tr>
+            <td>
+                <mat-form-field appearance="fill">
+                    <mat-label>Mikrolokacija</mat-label>
+                    <mat-select [formControl]="mikrolokacijaBrisanjeFormControl" [(ngModel)]='mikrolokacijaBrisanje'>
+                        <mat-option *ngFor='let microlocation of allMicrolocations' value="{{microlocation.name}}">
+                            {{microlocation.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="mikrolokacijaBrisanjeFormControl.hasError('required')">Izaberite jednu od
+                        mikrolokacija</mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button mat-raised-button (click)="obrisiMikrolokaciju()">Obrisi mikrolokaciju</button>
+            </td>
+        </tr>
+    </table>
+</div>

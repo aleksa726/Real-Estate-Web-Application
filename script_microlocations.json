@@ -1,0 +1,96 @@
+{
+    "_id" : ObjectId("61f08d359f307abdfb3b0e12"),
+    "name" : "Bulbulder",
+    "state" : "Zvezdara",
+    "city" : "Beograd",
+    "streets" : [ 
+        {
+            "name" : "Krfska"
+        }
+    ]
+}
+{
+    "_id" : ObjectId("61f08d359f307abdfb3b0e15"),
+    "name" : "Djeram",
+    "state" : "Zvezdara",
+    "city" : "Beograd",
+    "streets" : [ 
+        {
+            "name" : "Vojvode Savatija"
+        }
+    ]
+}
+{
+    "_id" : ObjectId("61f08d359f307abdfb3b0e18"),
+    "name" : "Lion",
+    "state" : "Zvezdara",
+    "city" : "Beograd"
+}
+{
+    "_id" : ObjectId("61f08d359f307abdfb3b0e1b"),
+    "name" : "Altina",
+    "state" : "Zemun",
+    "city" : "Beograd"
+}
+{
+    "_id" : ObjectId("61f08d359f307abdfb3b0e1e"),
+    "name" : "Neimar",
+    "state" : "Vracar",
+    "city" : "Beograd"
+}
+{
+    "_id" : ObjectId("61f08d359f307abdfb3b0e24"),
+    "name" : "Belvil",
+    "state" : "Novi Beograd",
+    "city" : "Beograd"
+}
+{
+    "_id" : ObjectId("61f08d359f307abdfb3b0e27"),
+    "name" : "Arena",
+    "state" : "Novi Beograd",
+    "city" : "Beograd"
+}
+{
+    "_id" : ObjectId("61f08d359f307abdfb3b0e2a"),
+    "name" : "Centar (Cacak)",
+    "state" : "Cacak",
+    "city" : "Cacak"
+}
+{
+    "_id" : ObjectId("61f08d359f307abdfb3b0e2d"),
+    "name" : "Centar (Nis)",
+    "state" : "Palilula",
+    "city" : "Nis"
+}
+{
+    "_id" : ObjectId("61f15b4601853b5ca42531b4"),
+    "name" : "Juzni Bulevar",
+    "state" : "Vracar",
+    "city" : "Beograd",
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("61f15d60696831e3486de07d"),
+    "name" : "Cvetkova pijaca",
+    "state" : "Zvezdara",
+    "city" : "Beograd",
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("61f177d3b88d8bcb0c98e3f7"),
+    "streets" : [],
+    "name" : "Centar(Novi Sad)",
+    "city" : "Novi Sad",
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("61f69d2d9f307abdfb3cc0c4"),
+    "name" : "Crveni krst",
+    "state" : "Vracar",
+    "city" : "Beograd",
+    "streets" : [ 
+        {
+            "name" : "Milesevska"
+        }
+    ]
+}

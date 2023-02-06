@@ -1,0 +1,191 @@
+<div class="container">
+    <table style="margin: auto; margin-top: 25px !important;">
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Cena od</mat-label>
+                    <input [(ngModel)]='cenaOd' type="number" matInput>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Cena do</mat-label>
+                    <input [(ngModel)]='cenaDo' type="number" matInput>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Kvadratura od</mat-label>
+                    <input [(ngModel)]='kvadraturaOd' type="number" matInput>
+                </mat-form-field>
+            </td>
+
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Kvadratura do</mat-label>
+                    <input [(ngModel)]='kvadraturaDo' type="number" matInput>
+                </mat-form-field>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Broj soba od</mat-label>
+                    <input [(ngModel)]='sobaOd' type="number" matInput>
+                </mat-form-field>
+            </td>
+
+
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Broj soba do</mat-label>
+                    <input [(ngModel)]='sobaDo' type="number" matInput>
+                </mat-form-field>
+            </td>
+
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Godina proizvodnje od</mat-label>
+                    <input [(ngModel)]='godinaOd' type="number" matInput>
+                </mat-form-field>
+            </td>
+
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Godina proizvodnje do</mat-label>
+                    <input [(ngModel)]='godinaDo' type="number" matInput>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Oglasavac:</span>
+                <br>
+                <mat-checkbox class="example-margin" [(ngModel)]='agencija'>Agencija</mat-checkbox>
+                &nbsp;
+                <mat-checkbox class="example-margin" [(ngModel)]='vlasnik'>Vlasnik</mat-checkbox>
+            </td>
+
+            <td>
+                <mat-form-field appearance="fill">
+                    <mat-label>Stanje</mat-label>
+                    <mat-select multiple [(ngModel)]='stanje'>
+                        <mat-option value="Izvorno">Izvorno</mat-option>
+                        <mat-option value="Renovirano">Renovirano</mat-option>
+                        <mat-option value="Lux">Lux</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+
+            <td>
+                <mat-form-field appearance="fill">
+                    <mat-label>Grejanje</mat-label>
+                    <mat-select multiple [(ngModel)]='grejanje'>
+                        <mat-option value="CG">CG</mat-option>
+                        <mat-option value="EG">EG</mat-option>
+                        <mat-option value="TA">TA</mat-option>
+                        <mat-option value="Gas">Gas</mat-option>
+                        <mat-option value="Podno">Podno</mat-option>
+                        <mat-option value="Toplotne_pumpe">Toplotne pumpe</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Sprat od</mat-label>
+                    <input [(ngModel)]='spratOd' type="number" matInput>
+                </mat-form-field>
+            </td>
+
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Sprat do</mat-label>
+                    <input [(ngModel)]='spratDo' type="number" matInput>
+                </mat-form-field>
+            </td>
+
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Mesecne rezije od</mat-label>
+                    <input [(ngModel)]='rezijeOd' type="number" matInput>
+                </mat-form-field>
+            </td>
+
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Mesecne rezije do</mat-label>
+                    <input [(ngModel)]='rezijeDo' type="number" matInput>
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <br>
+            </td>
+        </tr>
+    </table>
+    <table class="karakteristike" style="margin: auto;">
+        <tr>
+            <td>Karakteristike:</td>
+        </tr>
+        <tr>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='terasa'>Terasa</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='lodja'>Lodja</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='telefon'>Telefon</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='balkon'>Francuski balkon</mat-checkbox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='lift'>Lift</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='podrum'>Podrum</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='garaza'>Garaza</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='basta'>Sa bastom</mat-checkbox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='klima'>Klima</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='internet'>Internet</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='interfon'>Interfon</mat-checkbox>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div class="button_div">
+        <button mat-raised-button (click)='pretrazi()'>Pretrazi</button>
+    </div>
+    <div *ngFor='let listing of listingsForDisplay'>
+        <app-listing-preview [listing]="listing"></app-listing-preview>
+    </div>
+    <div class="pagination" *ngIf="listingsForDisplay.length>0">
+        <button mat-mini-fab color="primary" (click)="pageDec()">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <span>{{currentPage}}</span>
+        <button mat-mini-fab color="primary" (click)="pageInc()">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+    </div>
+</div>

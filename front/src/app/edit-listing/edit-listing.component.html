@@ -1,0 +1,275 @@
+<h2>Azuriraj oglas</h2>
+
+<table style="margin: auto;">
+    <tr>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Naslov</mat-label>
+                <input [(ngModel)]='name' type="text" matInput [formControl]="nameFormControl">
+                <mat-error *ngIf="nameFormControl.hasError('required')">
+                    Naslov je <strong>obavezno</strong> polje
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Grad</mat-label>
+                <mat-select [formControl]="gradFormControl" [(ngModel)]='grad'
+                    (selectionChange)="onCitySelected($event)">
+                    <mat-option *ngFor='let city of cities' value="{{city.name}}">{{city.name}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="gradFormControl.hasError('required')">Izaberite jedan od gradova</mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Opstina</mat-label>
+                <mat-select [formControl]="opstinaFormControl" [(ngModel)]='opstina'
+                    (selectionChange)="onStateSelected($event)">
+                    <mat-option *ngFor='let state of states' value="{{state.name}}">{{state.name}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="opstinaFormControl.hasError('required')">Izaberite jednu od opstina</mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Mikrolokacija</mat-label>
+                <mat-select [formControl]="mikrolokacijaFormControl" [(ngModel)]='mikrolokacija'
+                    (selectionChange)="onMicrolocationSelected($event)">
+                    <mat-option *ngFor='let microlocation of microlocations' value="{{microlocation.name}}">
+                        {{microlocation.name}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="mikrolokacijaFormControl.hasError('required')">Izaberite jednu od mikrolokacija
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Ulica</mat-label>
+                <mat-select [formControl]="ulicaFormControl" [(ngModel)]='ulica'>
+                    <mat-option *ngFor='let street of streets' value="{{street.name}}">
+                        {{street.name}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="mikrolokacijaFormControl.hasError('required')">Izaberite jednu od ulica
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Tip</mat-label>
+                <mat-select [formControl]="tipFormControl" [(ngModel)]='tip'>
+                    <mat-option value="Stan">Stan</mat-option>
+                    <mat-option value="Kuca">Kuca</mat-option>
+                    <mat-option value="Vikendica">Vikendica</mat-option>
+                    <mat-option value="Lokal">Lokal</mat-option>
+                    <mat-option value="Magacin">Magacin</mat-option>
+                </mat-select>
+                <mat-error *ngIf="tipFormControl.hasError('required')">Izaberite jednu od tipova
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Kvadratura</mat-label>
+                <input [(ngModel)]='kvadrata' type="text" matInput [formControl]="kvadrataFormControl">
+                <mat-error *ngIf="kvadrataFormControl.hasError('required')">
+                    Kvadratura je <strong>obavezno</strong> polje
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Soba</mat-label>
+                <input [(ngModel)]='soba' type="text" matInput [formControl]="sobaFormControl">
+                <mat-error *ngIf="sobaFormControl.hasError('required')">
+                    Soba je <strong>obavezno</strong> polje
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Godina izgradnje</mat-label>
+                <input [(ngModel)]='godina' type="number" matInput [formControl]="godinaFormControl">
+                <mat-error *ngIf="godinaFormControl.hasError('required')">
+                    Godina izgradnje je <strong>obavezno</strong> polje
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Stanje</mat-label>
+                <mat-select [formControl]="stanjeFormControl" [(ngModel)]='stanje'>
+                    <mat-option value="Izvorno">Izvorno</mat-option>
+                    <mat-option value="Renovirano">Renovirano</mat-option>
+                    <mat-option value="Lux">Lux</mat-option>
+                </mat-select>
+                <mat-error *ngIf="stanjeFormControl.hasError('required')">Izaberite jedno od stanja
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Grejanje</mat-label>
+                <mat-select [formControl]="grejanjeFormControl" [(ngModel)]='grejanje'>
+                    <mat-option value="CG">CG</mat-option>
+                    <mat-option value="EG">EG</mat-option>
+                    <mat-option value="TA">TA</mat-option>
+                    <mat-option value="Gas">Gas</mat-option>
+                    <mat-option value="Podno">Podno</mat-option>
+                    <mat-option value="Toplotne_pumpe">Toplotne pumpe</mat-option>
+                </mat-select>
+                <mat-error *ngIf="grejanjeFormControl.hasError('required')">Izaberite jedno od grejanja
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Sprat</mat-label>
+                <input [(ngModel)]='sprat' type="number" matInput [formControl]="spratFormControl">
+                <mat-error *ngIf="spratFormControl.hasError('required')">
+                    Sprat je <strong>obavezno</strong> polje
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Ukupan broj spratova</mat-label>
+                <input [(ngModel)]='ukupnoSpratova' type="number" matInput [formControl]="ukupnoSpratovaFormControl">
+                <mat-error *ngIf="ukupnoSpratovaFormControl.hasError('required')">
+                    Ukupan broj spratova je <strong>obavezno</strong> polje
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Parking</mat-label>
+                <input [(ngModel)]='parking' type="text" matInput [formControl]="parkingFormControl">
+                <mat-error *ngIf="parkingFormControl.hasError('required')">
+                    Parking je <strong>obavezno</strong> polje
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Mesecne rezije</mat-label>
+                <input [(ngModel)]='mesecneRezije' type="number" matInput [formControl]="mesecneRezijeFormControl">
+                <mat-error *ngIf="mesecneRezijeFormControl.hasError('required')">
+                    Mesecne rezije su <strong>obavezno</strong> polje
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Cena</mat-label>
+                <input [(ngModel)]='cena' type="number" matInput [formControl]="cenaFormControl">
+                <mat-error *ngIf="cenaFormControl.hasError('required')">
+                    Cena je <strong>obavezno</strong> polje
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Opis</mat-label>
+                <input [(ngModel)]='opis' type="text" matInput [formControl]="opisFormControl">
+                <mat-error *ngIf="opisFormControl.hasError('required')">
+                    Opis je <strong>obavezno</strong> polje
+                </mat-error>
+            </mat-form-field>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Linije</mat-label>
+                <mat-select [(ngModel)]='linije' multiple>
+                    <mat-option *ngFor='let busLine of busLines' value='{{busLine.line}}'>{{busLine.line}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </td>
+    </tr>
+    <table class="karakteristike">
+        <tr>
+            <td>Karakteristike:</td>
+        </tr>
+        <tr>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='terasa'>Terasa</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='lodja'>Lodja</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='telefon'>Telefon</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='balkon'>Francuski balkon</mat-checkbox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='lift'>Lift</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='podrum'>Podrum</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='garaza'>Garaza</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='basta'>Sa bastom</mat-checkbox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='klima'>Klima</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='internet'>Internet</mat-checkbox>
+            </td>
+            <td>
+                <mat-checkbox class="example-margin" [(ngModel)]='interfon'>Interfon</mat-checkbox>
+            </td>
+        </tr>
+    </table>
+    <tr>
+        <br>
+    </tr>
+
+    <tr>
+        <td>
+            <button mat-raised-button (click)='azurirajNekretninu()'>Azuriraj nekretninu</button>
+        </td>
+    </tr>
+</table>

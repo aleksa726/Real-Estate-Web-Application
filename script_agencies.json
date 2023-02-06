@@ -1,0 +1,18 @@
+{
+    "_id" : ObjectId("61f7d0fead2deefd146aa60c"),
+    "name" : "Agencija Vukovic",
+    "adress" : "Dimitrija Tucovica",
+    "city" : "Beograd",
+    "phone" : "+38164123456",
+    "pib" : "123456789",
+    "__v" : 0
+}
+{
+    "_id" : ObjectId("61f7d133ad2deefd146aa60d"),
+    "name" : "Prodaja Nekretnina Zvezdara",
+    "adress" : "Svetog Nikole 20",
+    "city" : "Beograd",
+    "phone" : "+38165987654",
+    "pib" : "0000123",
+    "__v" : 0
+}

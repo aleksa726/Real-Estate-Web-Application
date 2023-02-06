@@ -1,0 +1,40 @@
+{
+    "_id" : ObjectId("61f08be39f307abdfb3b0d73"),
+    "name" : "Novi Beograd",
+    "city" : "Beograd"
+}
+{
+    "_id" : ObjectId("61f08be39f307abdfb3b0d76"),
+    "name" : "Zvezdara",
+    "city" : "Beograd"
+}
+{
+    "_id" : ObjectId("61f08be39f307abdfb3b0d79"),
+    "name" : "Vracar",
+    "city" : "Beograd"
+}
+{
+    "_id" : ObjectId("61f08be39f307abdfb3b0d7c"),
+    "name" : "Zemun",
+    "city" : "Beograd"
+}
+{
+    "_id" : ObjectId("61f08be39f307abdfb3b0d7f"),
+    "name" : "Novi Sad",
+    "city" : "Novi Sad"
+}
+{
+    "_id" : ObjectId("61f08be39f307abdfb3b0d82"),
+    "name" : "Palilula",
+    "city" : "Nis"
+}
+{
+    "_id" : ObjectId("61f08be39f307abdfb3b0d85"),
+    "name" : "Niska Banja",
+    "city" : "Nis"
+}
+{
+    "_id" : ObjectId("61f08be39f307abdfb3b0d88"),
+    "name" : "Cacak",
+    "city" : "Cacak"
+}

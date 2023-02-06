@@ -1,0 +1,16 @@
+div{
+    background-color: royalblue; 
+    text-align: center;
+    padding: 25px;
+    margin-top: 75px;
+
+    box-sizing: border-box;
+
+}
+
+span{
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}

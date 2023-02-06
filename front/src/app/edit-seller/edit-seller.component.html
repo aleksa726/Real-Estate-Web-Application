@@ -1,0 +1,60 @@
+<div class="container">
+    <h2>Moji podaci</h2>
+    <table style="margin: auto;">
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Telefon</mat-label>
+                    <input [(ngModel)]='phone' type="text" matInput [formControl]="phoneFormControl"
+                        value="{{telefon}}">
+                    <mat-error *ngIf="phoneFormControl.hasError('required')">
+                        Telefon je <strong>obavezno</strong> polje
+                    </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Email adresa</mat-label>
+                    <input [(ngModel)]='email' type="email" matInput [formControl]="emailFormControl"
+                        placeholder="pat@example.com" value="{{emailAdresa}}">
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Neispravan format
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Email adresa je <strong>obavezno</strong> polje
+                    </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance="fill">
+                    <mat-label>Tip</mat-label>
+                    <mat-select [formControl]="typeFormControl" [(ngModel)]='type' value="{{tip}}">
+                        <mat-option value="Prodavac">Prodavac</mat-option>
+                        <mat-option value="Agent">Agent</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="typeFormControl.hasError('required')">Izaberite jedan od tipova</mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance="fill" *ngIf='type==agentString'>
+                    <mat-label>Agencija</mat-label>
+                    <mat-select [formControl]="agencyFormControl" [(ngModel)]='agency' value="{{agencija}}">
+                        <mat-option *ngFor='let a of allAgencies' value="{{a.name}}">{{a.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="agencyFormControl.hasError('required')">Izaberite jednu od agencija</mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button mat-raised-button (click)='updateUser()'>Sacuvaj izmene</button>
+            </td>
+        </tr>
+    </table>
+</div>

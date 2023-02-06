@@ -1,0 +1,42 @@
+<div class="container">
+    <h2>Dodavanje nekretnine</h2>
+    <table style="margin: auto;">
+        <tr>
+            <td>
+                <span>Fajl:</span>
+            </td>
+            <td>
+                <input type="file" (change)="onFilesSelected($event)" />
+            </td>
+            <td>
+                <span style="color: red;">{{errorMess}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span *ngIf="dataValid" style="color: limegreen; font-style: italic;">Svi podaci su ispravni</span>
+            </td>
+        </tr>
+        <tr *ngIf="dataValid">
+            <td>
+                <span>Slike:</span>
+            </td>
+            <td>
+                <input type="file" multiple (change)="onImagesSelected($event)" />
+                <br>
+                <span style="color: red;">{{imageNotSelectedError}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+            </td>
+        </tr>
+        <tr *ngIf="dataValid">
+            <td>
+                <button mat-raised-button (click)='addListing()'>Dodaj nekretninu</button>
+            </td>
+        </tr>
+
+    </table>
+</div>

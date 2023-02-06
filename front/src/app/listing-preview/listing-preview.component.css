@@ -1,0 +1,75 @@
+.oglas_div{
+    width: 300px;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: lavender;
+    border-radius: 12px;
+    margin: auto;
+    margin-bottom: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: black !important;
+    box-shadow: 0px 3px 5px rgb(131, 131, 131);
+}
+
+.oglas_div:hover{
+    box-shadow: 1px 4px 8px rgb(131, 131, 131);
+}
+
+.oglas_div a{
+    text-decoration: none;
+    color: black !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.oglas_div a:visited{
+    color: black;
+}
+
+.oglas_div h2{
+    font-size: 26px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.kvadratura_spratnost{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.oglas_div img{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+.cena{
+    font-weight: bolder;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.karakteristike{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.karakteristike_div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -1,0 +1,43 @@
+<app-main-nav>
+    <h2>Prijava</h2>
+
+    <table style="margin: auto;">
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Korisnicko ime</mat-label>
+                    <input [(ngModel)]='username' type="text" matInput [formControl]="usernameFormControl">
+                    <mat-error *ngIf="usernameFormControl.hasError('required')">
+                        Korisnicko ime je <strong>obavezno</strong> polje
+                    </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Lozinka</mat-label>
+                    <input [(ngModel)]='password' type="password" matInput [formControl]="passwordFormControl">
+                    <mat-error *ngIf="passwordFormControl.hasError('required')">
+                        Lozinka je <strong>obavezno</strong> polje
+                    </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2'>
+                <button mat-raised-button (click)='login()'>Prijavi se</button>
+            </td>
+        </tr>
+        <tr>
+            <td><span class='error'>{{message}}</span></td>
+        </tr>
+    </table>
+
+
+    <br>
+    <br>
+    <div *ngFor="let listing of listings">
+        <app-listing-preview [listing]="listing"></app-listing-preview>
+    </div>
+</app-main-nav>

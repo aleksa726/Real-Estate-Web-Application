@@ -1,0 +1,99 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" [ngClass]="{hidden: !(isHandset$ | async)}" fixedInViewport="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+
+      <div *ngIf='username==null'>
+        <a mat-list-item routerLink="">Prijava</a>
+        <a mat-list-item routerLink="register">Registruj se</a>
+      </div>
+
+      <div *ngIf='type=="Admin"'>
+        <a mat-list-item routerLink="users">Korisnici</a>
+        <a mat-list-item routerLink="addAgency">Dodaj agenciju</a>
+        <a mat-list-item routerLink="addMicrolocation">Dodaj mikrolokaciju</a>
+        <a mat-list-item routerLink="changePassword">Promeni lozinku</a>
+        <a mat-list-item routerLink="" (click)="logout()">Izloguj se</a>
+      </div>
+
+      <div *ngIf='type=="Kupac"'>
+        <a mat-list-item routerLink="home">Pocetna</a>
+        <a mat-list-item routerLink="search">Pretraga oglasa</a>
+        <a mat-list-item routerLink="favouriteListings">Omiljeni oglasi</a>
+        <a mat-list-item routerLink="changePassword">Promeni lozinku</a>
+        <a mat-list-item routerLink="" (click)="logout()">Izloguj se</a>
+      </div>
+
+      <div *ngIf='type=="Prodavac"'>
+        <a mat-list-item routerLink="home">Pocetna</a>
+        <a mat-list-item routerLink="addListing">Oglasi nekretninu</a>
+        <a mat-list-item routerLink="changePassword">Promeni lozinku</a>
+        <a mat-list-item routerLink="changeData">Licni podaci</a>
+        <a mat-list-item routerLink="" (click)="logout()">Izloguj se</a>
+      </div>
+
+      <div *ngIf='type=="Agent"'>
+        <a mat-list-item routerLink="home">Pocetna</a>
+        <a mat-list-item routerLink="addListing">Oglasi nekretninu</a>
+        <a mat-list-item routerLink="changePassword">Promeni lozinku</a>
+        <a mat-list-item routerLink="changeData">Licni podaci</a>
+        <a mat-list-item routerLink="" (click)="logout()">Izloguj se</a>
+      </div>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Projekat PIA</span>
+      <div class="spacer"></div>
+      <div [ngClass]="{hidden: (isHandset$ | async)}">
+
+        <div *ngIf='username==null'>
+          <a mat-button routerLink="">Prijava</a>
+          <a mat-raised-button color="accent" routerLink="register">Registruj se</a>
+        </div>
+
+        <div *ngIf='type=="Admin"'>
+          <a mat-button routerLink="users">Korisnici</a>
+          <a mat-button routerLink="addAgency">Dodaj agenciju</a>
+          <a mat-button routerLink="addMicrolocation">Dodaj mikrolokaciju</a>
+          <a mat-button routerLink="changePassword">Promeni lozinku</a>
+          <a mat-raised-button color="accent" routerLink="" (click)="logout()">Izloguj se</a>
+        </div>
+
+        <div *ngIf='type=="Kupac"'>
+          <a mat-button routerLink="home">Pocetna</a>
+          <a mat-button routerLink="search">Pretraga oglasa</a>
+          <a mat-button routerLink="favouriteListings">Omiljeni oglasi</a>
+          <a mat-button routerLink="changePassword">Promeni lozinku</a>
+          <a mat-raised-button color="accent" routerLink="" (click)="logout()">Izloguj se</a>
+        </div>
+
+        <div *ngIf='type=="Prodavac"'>
+          <a mat-button routerLink="home">Pocetna</a>
+          <a mat-button routerLink="addListing">Oglasi nekretninu</a>
+          <a mat-button routerLink="changePassword">Promeni lozinku</a>
+          <a mat-button routerLink="changeData">Licni podaci</a>
+          <a mat-raised-button color="accent" routerLink="" (click)="logout()">Izloguj se</a>
+        </div>
+
+        <div *ngIf='type=="Agent"'>
+          <a mat-button routerLink="home">Pocetna</a>
+          <a mat-button routerLink="addListing">Oglasi nekretninu</a>
+          <a mat-button routerLink="changePassword">Promeni lozinku</a>
+          <a mat-button routerLink="changeData">Licni podaci</a>
+          <a mat-raised-button color="accent" routerLink="" (click)="logout()">Izloguj se</a>
+        </div>
+
+      </div>
+    </mat-toolbar>
+    <ng-content></ng-content>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

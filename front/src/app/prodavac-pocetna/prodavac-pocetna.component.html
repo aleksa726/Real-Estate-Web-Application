@@ -1,0 +1,12 @@
+<div class="container">
+    <h2>Moji oglasi</h2>
+    <table style="margin: auto;">
+        <tr *ngFor='let listing of myListings'>
+            <td><span>{{listing.naslov}} - {{listing.cena}}</span></td>
+            <td> <button (click)="updateListing(listing.naslov)" mat-stroked-button color="primary">Izmeni</button></td>
+            <td *ngIf="listing.prodato == 0"><button (click)="prodaj(listing)" mat-raised-button
+                    color="accent">Prodato</button></td>
+            <td *ngIf="listing.prodato == 1" style="text-align: center;"><span>Prodato</span></td>
+        </tr>
+    </table>
+</div>
